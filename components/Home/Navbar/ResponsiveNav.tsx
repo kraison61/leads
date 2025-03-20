@@ -6,7 +6,7 @@ import MobileNav from "./MobileNav";
 import { useState } from "react";
 
 const ResponsiveNav = () => {
-  const [showNav, setShowNav] = useState(true);
+  const [showNav, setShowNav] = useState(false);
   const handleNavShow = () => {
     setShowNav(true);
   };

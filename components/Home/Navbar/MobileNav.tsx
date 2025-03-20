@@ -11,13 +11,15 @@ const MobileNav = ({ closeNav, showNav }: Props) => {
   const navOpen = showNav ? "translate-x-0" : "translate-x-[-100%]";
 
   return (
-    <div className="overflow-hidden h-[2000px]">
+    <div className="overflow-hidden">
       {/* overlay  */}
       <div
         className={`fixed ${navOpen} inset-0 transform transition-all duration-200 z-[10000] bg-black opacity-75 h-screen w-full`}
       >
         {/* Navlinks  */}
-        <div className="text-white fixed justify-center flex flex-col h-full transform transition-all duration-500 delay-300 w-[80%] sm:w-[60%] bg-indigo-900 space-y-6 z-[10006]">
+        <div
+          className={`text-white ${navOpen} fixed justify-center flex flex-col h-full transform transition-all duration-500 delay-300 w-[80%] sm:w-[60%] bg-indigo-900 space-y-6 z-[10006]`}
+        >
           {navLinks.map((link) => {
             return (
               <Link href={link.url} key={link.id}>

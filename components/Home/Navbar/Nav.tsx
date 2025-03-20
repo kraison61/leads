@@ -25,7 +25,7 @@ const Nav = ({ openNav }: Props) => {
 
   return (
     <div
-      className={`w-full ${
+      className={`fixed w-full ${
         navBg ? "bg-white shadow-md" : "fixed"
       } transition-all duration-200 h-[12vh] z-[1000]`}
     >

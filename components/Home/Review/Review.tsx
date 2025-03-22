@@ -22,7 +22,27 @@ const responsive = {
   },
 };
 
-const Review = () => {
+interface ReviewProps {
+  content: {
+    id:string
+    title: string;
+    description: string;
+    heading: string;
+    contentdetail: string;
+    review_1:string
+    review_2:string
+    review_3:string
+    review_4:string
+    review_5:string
+    review_6:string
+    review_7:string
+    review_8:string
+    review_9:string
+  };
+}
+
+const Review = ({content}:ReviewProps) => {
+  console.log(content)
   return (
     <div className="pt-16 pb-16 bg-[#fcf6fa]">
       <h1 className="mt-6 text-2xl md:text-3xl capitalize font-bold text-center">
@@ -37,10 +57,15 @@ const Review = () => {
           responsive={responsive}
           showDots={true}
         >
-          <ReviewCard name="Jessy Doe" image="/images/c1.png" />
-          <ReviewCard name="John Doe" image="/images/c2.png" />
-          <ReviewCard name="Jessy Doe" image="/images/c1.png" />
-          <ReviewCard name="John Doe" image="/images/c2.png" />
+          <ReviewCard name="Jessy Doe" review={content.review_1} />
+          <ReviewCard name="John Doe" review={content.review_2} />
+          <ReviewCard name="Emily Johnson" review={content.review_3} />
+          <ReviewCard name="Liam Martinez" review={content.review_4} />
+          <ReviewCard name="Sophia Anderson" review={content.review_5} />
+          <ReviewCard name="Noah Thompson" review={content.review_6} />
+          <ReviewCard name="Olivia Garcia" review={content.review_7} />
+          <ReviewCard name="Ethan Brown" review={content.review_8} />
+          <ReviewCard name="Ava Wilson" review={content.review_9} />
         </Carousel>
       </div>
     </div>

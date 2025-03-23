@@ -8,15 +8,15 @@ interface HeroProps {
     description?: string;
     heading?: string;
     contentdetail?: string;
-    review_1: string;
-    review_2: string;
-    review_3: string;
-    review_4: string;
-    review_5: string;
-    review_6: string;
-    review_7: string;
-    review_8: string;
-    review_9: string;
+    review_1?: string;
+    review_2?: string;
+    review_3?: string;
+    review_4?: string;
+    review_5?: string;
+    review_6?: string;
+    review_7?: string;
+    review_8?: string;
+    review_9?: string;
   };
 }
 

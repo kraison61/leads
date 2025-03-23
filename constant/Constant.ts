@@ -1,8 +1,8 @@
 export const navLinks = [
-  { id: 1, url: "#", label: "StartNow" },
-  { id: 2, url: "#", label: "HowItWork" },
-  { id: 3, url: "#", label: "FAQ" },
-  { id: 4, url: "#", label: "AboutUs" },
+  { id: 1, url: "/application-form", label: "StartNow" },
+  // { id: 2, url: "#howitwork", label: "HowItWork" },
+  { id: 3, url: "/faq", label: "FAQ" },
+  { id: 4, url: "/about", label: "AboutUs" },
 ];
 
 export const contentData = [

@@ -1,14 +1,15 @@
 import Image from "next/image";
 import React from "react";
+import Link from "next/link";
 
 type Props = {
-  title: string;
-  image: string;
-  linkText: string;
-  content: string;
+  title?: string;
+  image?: string;
+  linkText?: string;
+  content?: string;
 };
 
-const WhyChooseCard = ({ title, image, linkText, content }: Props) => {
+const WhyChooseCard = ({ title, image,  content }: Props) => {
   return (
     <div>
       <Image
@@ -25,7 +26,7 @@ const WhyChooseCard = ({ title, image, linkText, content }: Props) => {
         {content}
       </p>
       <p className="text-center font-semibold text-blue-900 hover:text-blue-950 transition-all duration-200 cursor-pointer">
-        {linkText} &#8594;
+        <Link href="/application-form">GetNow</Link> &#8594;
       </p>
     </div>
   );

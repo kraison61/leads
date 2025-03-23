@@ -3,16 +3,16 @@
 import React, { useEffect } from "react";
 import Hero from "./Hero/Hero";
 import WhyChoose from "./WhyChoose/WhyChoose";
-import AnalyticsFeatured from "./AnalyticsFeatured/AnalyticsFeatured";
-import Feature from "./Feature/Feature";
 import Review from "./Review/Review";
-import Price from "./Price/Price";
 import Offer from "./Offer/Offer";
+
 
 import AOS from "aos";
 import "aos/dist/aos.css"; // You c
+import HowItWork from "./HowItWork/HowItWork";
 
 const Home = () => {
+
   useEffect(() => {
     const initAOS = async () => {
       await import("aos");
@@ -30,10 +30,8 @@ const Home = () => {
     <div className="overflow-hidden h-full">
       <Hero />
       <WhyChoose />
-      <AnalyticsFeatured />
-      <Feature />
       <Review />
-      <Price />
+      <HowItWork id="how-it-work" />
       <Offer />
     </div>
   );

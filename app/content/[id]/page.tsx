@@ -8,23 +8,17 @@ import Review from "@/components/Home/Review/Review";
 import Price from "@/components/Home/Price/Price";
 import Offer from "@/components/Home/Offer/Offer";
 
-
-
-
 const ContentPage = ({ params }: { params: { id: string } }) => {
   const content = contentData.find((c) => c.id === params.id);
   if (!content) {
     return <div>Content not found</div>;
   }
-  console.log(content)
+  console.log(content);
   return (
     <div>
       <Hero content={content} />
       <WhyChoose />
-      <AnalyticsFeatured />
-      <Feature />
-      <Review content={content}/>
-      <Price />
+      <Review content={content} />
       <Offer />
     </div>
   );

@@ -4,9 +4,10 @@ import DOMPurify from "dompurify";
 type Props = {
   name: string;
   review: string;
+  job: string;
 };
 
-const ReviewCard = ({ name, review }: Props) => {
+const ReviewCard = ({ name, review, job }: Props) => {
   const sanitizedHtml = DOMPurify.sanitize(review);
   return (
     <div className="w-full lg:w-[90%] relative mx-auto p-6 bg-white shadow-lg rounded-lg">
@@ -28,9 +29,7 @@ const ReviewCard = ({ name, review }: Props) => {
             <FaStar className="text-yellow-600 w-6 h-6" />
           </div>
           <h1 className="text-xl font-semibold mt-8">{name}</h1>
-          <p className="mt-2 text-lg text-gray-600 font-medium mb-6">
-            Full Stack Developer
-          </p>
+          <p className="mt-2 text-lg text-gray-600 font-medium mb-6">{job}</p>
         </div>
       </div>
     </div>

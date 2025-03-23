@@ -35,103 +35,68 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 
+import React from "react";
+import Image from "next/image";
 
-// app/products/[id]/page.tsx (Dynamic page)
-import Hero from '@/components/Home/Hero/Hero';
-
-interface Product {
-  id: number;
-  name: string;
-  description: string;
-  images: string[];
-}
-
-async function getProducts(): Promise<Product[]> {
-  // Simulate fetching products from a database or API
-  return [
-    {
-      id: 1,
-      name: 'Laptop',
-      description: 'High-performance laptop.',
-      images: ['/laptop1.jpg', '/laptop2.jpg'],
-    },
-    {
-      id: 2,
-      name: 'Tablet',
-      description: 'Portable tablet.',
-      images: ['/tablet1.jpg', '/tablet2.jpg'],
-    },
-    {
-      id: 3,
-      name: 'Smartphone',
-      description: 'Latest smartphone.',
-      images: ['/phone1.jpg', '/phone2.jpg'],
-    },
-  ];
-}
-
-export default async function ProductPage({ params }: { params: { id: string } }) {
-  const products = await getProducts();
-  const product = products.find((p) => p.id === parseInt(params.id));
-
-  if (!product) {
-    return <div>Product not found</div>;
-  }
-
-  return (
-    <div>
-      <h1>{product.name}</h1>
-      <p>{product.description}</p>
-      <Hero images={product.images} productName={product.name}/>
-    </div>
-  );
-}
-
-// components/Home/Hero/Hero.tsx
 interface HeroProps {
-  images: string[];
-  productName: string;
+content?: { // content is now optional.
+id: string;
+title?: string;
+description?: string;
+heading?: string;
+contentdetail?: string;
+review_1: string;
+review_2: string;
+review_3: string;
+review_4: string;
+review_5: string;
+review_6: string;
+review_7: string;
+review_8: string;
+review_9: string;
+};
 }
 
-const Hero: React.FC<HeroProps> = ({ images, productName }) => {
-  return (
-    <div className="hero">
-      <h2>Images for {productName}</h2>
-      <div className="image-gallery">
-        {images.map((image, index) => (
-          <img key={index} src={image} alt={`${productName} image ${index}`} />
-        ))}
+const Hero = ({ content }: HeroProps) => {
+const {
+id = "1",
+title = "Cash Advances: Quick Solutions for Financial Emergencies",
+description = "Cash advances and payday loans can help in emergencies, but they come with risks. Learn the key differences, fees, and how to use them responsibly in this comprehensive guide.",
+heading = "The Ultimate Guide to Cash Advances: Everything You Need to Know",
+contentdetail = "In today’s fast-paced world, financial emergencies can arise unexpectedly. Whether it’s an unexpected medical bill, car repair, or a sudden job loss, having access to quick cash can be a lifesaver. This is where cash advances come into play. In this comprehensive guide, we’ll explore everything you need to know about cash advances, including how they work, their benefits, drawbacks, and alternatives. We’ll also dive into related keywords like payday loans, short-term loans, and emergency funding to give you a complete understanding of your options.",
+} = content || {}; // provide an empty object as default for content.
+const htmlString = contentdetail;
+
+return (
+<div className="w-full pt-[4vh] md:pt-[12vh] h-screen bg-[#f7f6fb]">
+<div className="flex justify-center flex-col w-[90%] sm:w-[80%] h-full mx-auto">
+<div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-12">
+{/_ Text Content _/}
+<div>
+{/_ Heading _/}
+<h1
+              data-aos="fade-up"
+              className="text-2xl sm:text-4xl md:text-5xl mt-6 mb-6 font-bold md:leading-[3rem] lg:leading-[3.5rem]"
+            >
+{title}
+</h1>
+
+            {/* Description */}
+            <p
+              dangerouslySetInnerHTML={{ __html: htmlString }}
+              className="text-gray-700"
+            ></p>
+          </div>
+
+          {/* Image */}
+          <div data-aos="fade-up" data-aos-delay="200" className="hidden lg:block">
+            <Image src="/images/hero.png" alt="hero" width={700} height={700} />
+          </div>
+        </div>
       </div>
     </div>
-  );
+
+);
 };
 
 export default Hero;
-
-Explanation:
-
-app/products/[id]/page.tsx (Dynamic Page):
-This page is responsible for displaying the details of a specific product based on the id in the URL.
-getProducts() simulates fetching product data (in a real app, you'd use a database or API).
-We use params.id to get the id from the URL, and then find the corresponding product in the products array.
-We pass the product.images array and the product.name as props to the Hero component.
-components/Home/Hero/Hero.tsx:
-This component receives an array of image URLs (images) and a product name (productName) as props.
-It renders a heading with the product name and an image gallery.
-images.map() is used to iterate over the images array and render each image.
-The alt tag of the image is dynamically generated with the productName and index.
-How it works:
-
-Dynamic Route: When you navigate to a URL like /products/2, Next.js recognizes the [id] segment and renders app/products/[id]/page.tsx.
-Data Fetching: The getProducts() function fetches the product data.
-Product Selection: The code finds the product with the matching id from the URL.
-Prop Passing: The product.images array and product.name are passed as props to the Hero component.
-Rendering: The Hero component renders the image gallery using the passed data.
-Key improvements:
-
-Clear example of passing an object array's data to a component from a dynamic page.
-Uses async/await for simulated data fetching.
-Shows how to access the params object in a dynamic page.
-Includes type safety with interfaces.
-Clear separation of data fetching and component rendering.
-Alt tags for images.

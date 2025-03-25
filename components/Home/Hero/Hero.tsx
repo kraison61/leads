@@ -20,6 +20,9 @@ interface HeroProps {
   };
 }
 
+
+
+
 const Hero = ({ content }: HeroProps) => {
   const {
     id = "1",

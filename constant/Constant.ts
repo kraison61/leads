@@ -5,7 +5,26 @@ export const navLinks = [
   { id: 4, url: "/about", label: "AboutUs" },
 ];
 
-export const contentData = [
+
+export interface ContentItem {
+  id: string;
+  title: string;
+  description?: string;
+  heading?: string;
+  contentdetail?: string;
+  review_1?: string;
+  review_2?: string;
+  review_3?: string;
+  review_4?: string;
+  review_5?: string;
+  review_6?: string;
+  review_7?: string;
+  review_8?: string;
+  review_9?: string;
+}
+
+
+export const contentData:ContentItem[] = [
   {
     id: "1",
     title: "Fast Cash Advance Quotes | Connect with Lenders Online",

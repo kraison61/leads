@@ -25,10 +25,10 @@ interface HeroProps {
 
 const Hero = ({ content }: HeroProps) => {
   const {
-    id = "1",
+    // id = "1",
     title = "Cash Advances: Quick Solutions for Financial Emergencies",
-    description = "Cash advances and payday loans can help in emergencies, but they come with risks. Learn the key differences, fees, and how to use them responsibly in this comprehensive guide.",
-    heading = "The Ultimate Guide to Cash Advances: Everything You Need to Know",
+    // description = "Cash advances and payday loans can help in emergencies, but they come with risks. Learn the key differences, fees, and how to use them responsibly in this comprehensive guide.",
+    // heading = "The Ultimate Guide to Cash Advances: Everything You Need to Know",
     contentdetail = "In today’s fast-paced world, financial emergencies can arise unexpectedly. Whether it’s an unexpected medical bill, car repair, or a sudden job loss, having access to quick cash can be a lifesaver. This is where cash advances come into play. In this comprehensive guide, we’ll explore everything you need to know about cash advances, including how they work, their benefits, drawbacks, and alternatives. We’ll also dive into related keywords like payday loans, short-term loans, and emergency funding to give you a complete understanding of your options.",
   } = content || {};
   const htmlString = contentdetail;

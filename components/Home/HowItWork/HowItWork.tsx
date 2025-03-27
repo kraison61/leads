@@ -1,7 +1,7 @@
 import React from "react";
 import WhyChooseCard from "../WhyChoose/WhyChooseCard";
 
-const HowItWork = ({id}:{id:string}) => {
+const HowItWork = () => {
   return (
     <div className="pt-16 pb-16">
       <h1 className="mt-6 text-2xl md:text-3xl capitalize font-bold text-center">

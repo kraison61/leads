@@ -121,7 +121,6 @@ By understanding how cash advances work and what to consider before requesting o
     { name: "Ava Wilson", job: "Retail Business Owners", review: review_9 },
   ];
   
-  console.log(content)
   return (
     <div className="pt-16 pb-16 bg-[#fcf6fa]">
       <h1 className="mt-6 text-2xl md:text-3xl capitalize font-bold text-center">
